@@ -27,10 +27,8 @@ values = {'IF EXT': ['X','X','X','X','X','-','-','-','-'],
           'IF RCT': ['-','-','-','X','-','X','X','-','-'],
               'XO': ['-','X','X','X','-','X','-','X','X']}
 
-df_aux = pd.DataFrame(
-    index={'H 125','H 201','HP 550R','PD943XP','RP 340R','PH 0952','RP 225M','H 301','H 503'},
-    data=values,  
-)
+df_aux = pd.DataFrame(data=values)
+df_aux.index = ['H 125','H 201','HP 550R','PD943XP','RP 340R','PH 0952','RP 225M','H 301','H 503']
 st.dataframe(df_aux)
 
 @st.cache(persist=True)
