@@ -23,6 +23,16 @@ st.sidebar.image(icon, use_column_width=True,) #caption="VOAs Entregues"
 st.title("ANALISADORES VIRTUAIS PP5 📈")
 st.sidebar.title("PRODUTOS APTOS PARA UTILIZAÇÃO")
 
+values = {'IF EXT': ['X','X','X','X','X','-','-','-','-'],
+          'IF RCT': ['-','-','-','X','-','X','X','-','-'],
+              'XO': ['-','X','X','X','-','X','-','X','X']}
+
+df_aux = pd.DataFrame(
+    index={'H 125','H 201','HP 550R','PD943XP','RP 340R','PH 0952','RP 225M','H 301','H 503'},
+    data=values,  
+)
+st.dataframe(df_aux)
+
 @st.cache(persist=True)
 def load_data():
     data = pd.read_excel(DATA_URL)
